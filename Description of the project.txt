@@ -1,0 +1,16 @@
+🧾 Project: Personal Expense Tracker (CLI-based)
+
+This project will:
+
+Let user add expenses
+View all expenses
+Show total spending
+
+We’ll only use:
+
+variables
+lists
+loops
+conditionals
+functions
+basic input/output

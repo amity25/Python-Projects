@@ -1,0 +1,47 @@
+# Personal Expense Tracker
+
+# Create an empty list to store expenses
+expenses = []
+
+# Function to add an expense
+def add_expense():
+    category = input("Enter category: ")
+    amount = float(input("Enter amount: "))
+    expenses.append((category, amount))
+    print("Expense added successfully!")
+
+# Function to view all expenses
+def view_expenses():
+    if len(expenses) == 0:
+        print("No expenses recorded.")
+    else:
+        for expense in expenses:
+            print("Category:", expense[0], "| Amount:", expense[1])
+
+# Function to show total expenses
+def total_expense():
+    total = 0
+    for expense in expenses:
+        total += expense[1]
+    print("Total Expense:", total)
+
+# Main program loop
+while True:
+    print("\n1. Add Expense")
+    print("2. View Expenses")
+    print("3. Show Total")
+    print("4. Exit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+        add_expense()
+    elif choice == "2":
+        view_expenses()
+    elif choice == "3":
+        total_expense()
+    elif choice == "4":
+        print("Exiting program.")
+        break
+    else:
+        print("Invalid choice. Try again.")
