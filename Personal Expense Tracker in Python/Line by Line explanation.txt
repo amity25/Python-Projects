@@ -1,0 +1,125 @@
+💻 Full Code (with line-by-line explanation)
+
+# Create an empty list to store expenses
+expenses = []
+
+👉 We create a list called expenses to store all expense entries.
+👉 Each expense will later be stored as a tuple like: ("food", 200)
+
+# Function to add an expense
+def add_expense():
+
+👉 def is used to define a function.
+👉 add_expense is the function name.
+
+    category = input("Enter category: ")
+
+👉 input() takes user input as a string.
+👉 We store it in category (e.g., food, travel).
+
+    amount = float(input("Enter amount: "))
+
+👉 We take input again.
+👉 Convert it to a number using float() since money can be decimal.
+
+    expenses.append((category, amount))
+
+👉 append() adds a new item to the list.
+👉 (category, amount) is a tuple (pair of values).
+👉 Example stored: ("food", 200.0)
+
+    print("Expense added successfully!")
+
+👉 Displays confirmation to the user.
+
+# Function to view all expenses
+def view_expenses():
+
+👉 Another function to display stored data.
+
+    if len(expenses) == 0:
+
+👉 len() returns number of items in list.
+👉 If no expenses → list is empty.
+
+        print("No expenses recorded.")
+
+👉 Prints message if nothing exists.
+
+    else:
+
+👉 Runs if there are expenses.
+
+        for expense in expenses:
+
+👉 Loop through each item in list.
+
+            print("Category:", expense[0], "| Amount:", expense[1])
+
+👉 expense is a tuple → access values using index:
+
+expense[0] → category
+expense[1] → amount
+# Function to show total expenses
+def total_expense():
+
+👉 Function to calculate sum.
+
+    total = 0
+
+👉 Variable to store total amount.
+
+    for expense in expenses:
+
+👉 Loop through list.
+
+        total += expense[1]
+
+👉 Add each amount to total.
+👉 += means: total = total + value
+
+    print("Total Expense:", total)
+
+👉 Display final sum.
+
+# Main program loop
+while True:
+
+👉 Infinite loop so program keeps running.
+
+    print("\n1. Add Expense")
+    print("2. View Expenses")
+    print("3. Show Total")
+    print("4. Exit")
+
+👉 Menu options for user.
+
+    choice = input("Choose an option: ")
+
+👉 User selects option.
+
+    if choice == "1":
+        add_expense()
+
+👉 If user enters 1 → call function.
+
+    elif choice == "2":
+        view_expenses()
+
+👉 View all expenses.
+
+    elif choice == "3":
+        total_expense()
+
+👉 Show total.
+
+    elif choice == "4":
+        print("Exiting program.")
+        break
+
+👉 break exits the loop → program ends.
+
+    else:
+        print("Invalid choice. Try again.")
+
+👉 Handles wrong input.
